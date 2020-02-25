@@ -39,9 +39,11 @@ app.post('/api/beers', function(req, res) {
       text: 'Beers that *Co-workers* have recently enjoyed!'
     }
   }
-    const divider = {
+
+  const divider = {
     type: 'divider'
   }
+
   blocks[key].push(header);
   blocks[key].push(divider);
 
@@ -91,6 +93,17 @@ app.post('/api/beers', function(req, res) {
         if (checkin_counter++ >= 5)
           break;
       }      
+
+      const api_disclaimer = {
+        type: 'section',
+        elements: [
+          {
+            type: 'mrkdwn',
+            text: 'Power by Untappd'
+          }
+        ]
+      }
+      blocks[key].push(api_disclaimer);
       res.status(200).json(blocks);
     }
   });
@@ -139,6 +152,23 @@ app.post('/api/party', function(req, res) {
       }
 
       blocks[key].push(header);    
+
+      const divider = {
+        type: 'divider'
+      }
+      blocks[key].push(divider);
+
+      const api_disclaimer = {
+        type: 'section',
+        elements: [
+          {
+            type: 'mrkdwn',
+            text: 'Power by Untappd'
+          }
+        ]
+      }
+      blocks[key].push(api_disclaimer);
+
       res.status(200).json(blocks);
     }
   });
