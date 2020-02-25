@@ -47,3 +47,4 @@ Make sure you have permission to add applications to your Slack workspace. Creat
 * Make the venue id into a query parameter for the REST API which can then be set by the resulting Slack application. This would let a single backend handle multiple Slack deployments for different venues
 * Temporarily cache the Untappd API call results to help with the rate limiting of calls
 * Clean up Node package list to only contain modules that are used by the application
+* Provide a more accurate way of determining recent beer drinkers. Will need to convert date output from Untappd API to a more useable format.
